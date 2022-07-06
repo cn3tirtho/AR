@@ -14,6 +14,16 @@ function staticLoadPlaces() {
                 lat: -33.8378912957752,
                 lng: 151.2078403385177
             },
+            name: 'Keylink tech',
+            location: {
+                lat: -33.838798432380834, 
+                lng: 151.20820227079722
+            },
+            name: '83 Mount St',
+            location: {
+                lat: -33.83912969742048, 
+                lng: 151.2079620642977
+            }
         },
     ];
 }
@@ -55,6 +65,8 @@ var setModel = function (model, entity) {
 
     entity.setAttribute('gltf-model', model.url);
 
+    
+
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
 };
@@ -63,8 +75,12 @@ function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
+        let name = place.name;
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+        
+        const place = document.querySelector('.place');
+        place.innerText = model.info;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
