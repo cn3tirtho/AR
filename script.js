@@ -78,9 +78,9 @@ function renderPlaces(places) {
         let name = place.name;
         let latitude = place.location.lat;
         let longitude = place.location.lng;
-        
-        const place = document.querySelector('.place');
-        place.innerText = model.info;
+
+        const name = document.querySelector('.place');
+        name.innerText = model.info;
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
