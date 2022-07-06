@@ -16,11 +16,15 @@ function staticLoadPlaces() {
                 lat: -33.8378912957752,
                 lng: 151.2078403385177
             },
+        },
+        {
             name: 'Keylink tech',
             location: {
                 lat: -33.838798432380834, 
                 lng: 151.20820227079722
-            },
+            }
+        },
+        {
             name: '83 Mount St',
             location: {
                 lat: -33.83912969742048, 
