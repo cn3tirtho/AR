@@ -33,3 +33,12 @@ button {
     color: white;
     z-index: 999999;
 }
+
+.place {
+    position: fixed;
+    top: 2%;
+    font-size: 1.25em;
+    color: #e7a908;
+    z-index: 999999;
+}
+
