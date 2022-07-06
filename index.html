@@ -8,33 +8,15 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script>
-      /**
+      /*
       window.onload = () => {                       
         navigator.geolocation.getCurrentPosition((position) => {
         //document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
-        document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+        //document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
       });
      }
-     */
+      */
 
-     
-      // Check if a new cache is available on page load.
-      window.addEventListener('load', function(e) {
-
-        window.applicationCache.addEventListener('updateready', function(e) {
-          if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-            // Browser downloaded a new app cache.
-            // Swap it in and reload the page to get the new hotness.
-            window.applicationCache.swapCache();
-            if (confirm('A new version of this site is available. Load it?')) {
-              window.location.reload();
-            }
-          } else {
-            // Manifest didn't changed. Nothing new to server.
-          }
-        }, false);
-
-      }, false);
 
     </script>
     <script src="./script.js"></script>
