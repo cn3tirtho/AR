@@ -79,7 +79,7 @@ function staticLoadPlaces() {
 
 var connectedModel = [
     {
-        url: './assets/conn3cted/conn3cted-logo.gltf',
+        url: './assets/toyota_gr_supra/scene.gltf',
         scale: '0.08 0.08 0.08',
         info: 'Custom Software Developers',
         rotation: '0 180 0',
