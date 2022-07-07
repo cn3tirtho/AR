@@ -80,7 +80,7 @@ function staticLoadPlaces() {
 var connectedModel = [
     {
         url: './assets/conn3cted/conn3cted-logo.gltf',
-        scale: '0.5 0.5 0.5',
+        scale: '0.08 0.08 0.08',
         info: 'Custom Software Developers',
         rotation: '0 180 0',
     }
@@ -150,12 +150,14 @@ function renderPlaces2(places) {
 
         model.setAttribute('animation-mixer', '');
 
+        /*
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
             modelIndex++;
             var newIndex = modelIndex % models.length;
             setModel(connectedModel[newIndex], entity);
         });
+        */
 
         scene.appendChild(model);
     });

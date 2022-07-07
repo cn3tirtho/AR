@@ -27,7 +27,7 @@
 
 .toprow {
     position: fixed;
-    top: 1%;
+    top: 0.5%;
     font-size: 1.25em;
     color: white;
     z-index: 999999;
