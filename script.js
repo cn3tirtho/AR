@@ -110,8 +110,7 @@ var models = [
 var modelIndex = 0;
 var setModel = function (model, entity) {
     if (model.scale) {
-        //entity.setAttribute('scale', model.scale);
-        console.log('skipping scale');
+        entity.setAttribute('scale', model.scale);       
     }
 
     if (model.rotation) {
@@ -157,14 +156,15 @@ function renderPlaces2(places) {
 
         model.setAttribute('animation-mixer', '');
 
-        /*
+        
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
-            modelIndex++;
-            var newIndex = modelIndex % models.length;
-            setModel(connectedModel[newIndex], entity);
+            
+            entity.setAttribute('scale', '0.2 0.2 0.2');      
+
+
         });
-        */
+        
 
         scene.appendChild(model);
     });
