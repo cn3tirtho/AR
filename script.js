@@ -4,9 +4,51 @@ window.onload = () => {
     const button = document.querySelector('button[data-action="change"]');
     button.innerText = '﹖';
 
-    let places = staticLoadPlaces();
-    renderPlaces(places);
+
+    
+
+    //let places = staticLoadPlaces();
+    //renderPlaces(places);
+
+    let places = staticConn3cted();
+
+    renderPlaces2(places);
+
+
+     setupBackButton();
 };
+
+
+
+
+
+
+
+
+function setupBackButton() {
+
+
+    const backbutton = document.querySelector('button[data-action="backbutton"]');
+    backbutton.innerText = ' < ';
+
+
+    backbutton.addEventListener('click', function () {
+           history.back();
+    });
+}
+
+
+function staticConn3cted() {
+    return [
+        {
+            name: 'Conn3cted',
+            location: {
+                lat: -33.8378912957752,
+                lng: 151.2078403385177
+            },
+        }
+    ];
+}
 
 function staticLoadPlaces() {
     return [
@@ -33,6 +75,16 @@ function staticLoadPlaces() {
         },
     ];
 }
+
+
+var connectedModel = [
+    {
+        url: './assets/conn3cted/conn3cted-logo.gltf',
+        scale: '0.5 0.5 0.5',
+        info: 'Custom Software Developers',
+        rotation: '0 180 0',
+    }
+];
 
 var models = [
     {
@@ -76,6 +128,39 @@ var setModel = function (model, entity) {
     const div = document.querySelector('.instructions');
     div.innerText = model.info;
 };
+
+
+
+
+function renderPlaces2(places) {
+    let scene = document.querySelector('a-scene');
+
+    places.forEach((place) => {
+
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
+
+        const name = document.querySelector('.place');
+        name.innerText = place.name;
+
+        let model = document.createElement('a-entity');
+        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+
+        setModel(connectedModel[modelIndex], model);
+
+        model.setAttribute('animation-mixer', '');
+
+        document.querySelector('button[data-action="change"]').addEventListener('click', function () {
+            var entity = document.querySelector('[gps-entity-place]');
+            modelIndex++;
+            var newIndex = modelIndex % models.length;
+            setModel(connectedModel[newIndex], entity);
+        });
+
+        scene.appendChild(model);
+    });
+}
+
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
