@@ -79,7 +79,7 @@ function staticLoadPlaces() {
 
 var connectedModel = [
     {
-        url: './assets/dragonite/scene.gltf',
+        url: './assets/conn3cted/conn3cted-logo.gltf',
         scale: '0.08 0.08 0.08',
         info: 'Custom Software Developers',
         rotation: '0 180 0',
@@ -137,8 +137,14 @@ function renderPlaces2(places) {
 
     places.forEach((place) => {
 
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
+        var latitude = place.location.lat;
+        var longitude = place.location.lng;
+
+         navigator.geolocation.getCurrentPosition((position) => {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+        
+        });
 
         const name = document.querySelector('.place');
         name.innerText = place.name;
