@@ -160,7 +160,7 @@ function renderPlaces2(places) {
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
             
-            entity.setAttribute('scale', '0.2 0.2 0.2');      
+            entity.setAttribute('scale', '120 120 120');      
 
 
         });
