@@ -79,7 +79,7 @@ function staticLoadPlaces() {
 
 var connectedModel = [
     {
-        url: './assets/toyota_gr_supra/scene.gltf',
+        url: './assets/articuno/scene.gltf',
         scale: '0.08 0.08 0.08',
         info: 'Custom Software Developers',
         rotation: '0 180 0',
@@ -160,7 +160,7 @@ function renderPlaces2(places) {
         document.querySelector('button[data-action="change"]').addEventListener('click', function () {
             var entity = document.querySelector('[gps-entity-place]');
             
-            entity.setAttribute('scale', '120 120 120');      
+            entity.setAttribute('scale', '0.05 0.05 0.05');      
 
 
         });
@@ -169,6 +169,14 @@ function renderPlaces2(places) {
         scene.appendChild(model);
     });
 }
+
+
+
+
+
+
+
+
 
 
 function renderPlaces(places) {
